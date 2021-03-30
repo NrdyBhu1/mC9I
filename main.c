@@ -9,7 +9,7 @@
 #define WINDOW_HEIGHT 600
 
 //type definitions
-typedef enum { true, false } bool;
+typedef enum { false, true } bool;
 
 // gravity
 int getAcceleration(float objectMass, float bodyMass, float distance) {
@@ -63,7 +63,7 @@ int main(void) {
     float previousTic = 0.1f;
 
     // main loop
-    while (gameOver != true) {
+    while (!gameOver) {
         SDL_PollEvent(&event);
         dt = (SDL_GetTicks() - previousTic ) / 10;
         previousTic = SDL_GetTicks();
